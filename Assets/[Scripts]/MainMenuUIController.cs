@@ -25,7 +25,7 @@ public class MainMenuUIController : MonoBehaviour
 
     public void OnPlayClick()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Level");
     }
 
     public void OnInstructionsClick()
@@ -45,5 +45,10 @@ public class MainMenuUIController : MonoBehaviour
     {
         print("Quitting!");
         Application.Quit();
+    }
+
+    public void OnResetClick()
+    {
+        PlayerPrefs.SetInt("HighScore", 0);
     }
 }

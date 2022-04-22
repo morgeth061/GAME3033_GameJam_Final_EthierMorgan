@@ -83,26 +83,18 @@ public class GameController : MonoBehaviour
     {
         winMenu.transform.Find("WinText").gameObject.GetComponent<TextMeshProUGUI>().text = "You won!";
         winMenu.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void ShowLoseUI()
     {
         winMenu.transform.Find("WinText").gameObject.GetComponent<TextMeshProUGUI>().text = "You lost...";
         winMenu.SetActive(true);
-    }
-
-    public void ShowEndUI(bool didWin)
-    {
-        if (didWin)
-        {
-            winMenu.transform.Find("WinText").gameObject.GetComponent<TextMeshProUGUI>().text = "You won!";
-        }
-        else
-        {
-            winMenu.transform.Find("WinText").gameObject.GetComponent<TextMeshProUGUI>().text = "You lost...";
-        }
-        winMenu.SetActive(true);
         Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Pause()

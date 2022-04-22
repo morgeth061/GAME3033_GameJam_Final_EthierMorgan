@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.Oculus.Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -79,6 +80,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Pickup"))
         {
             gameController.GetComponent<GameController>().PickupCollected();
+            GetComponent<AudioSource>().Play();
         }
     }
 }
